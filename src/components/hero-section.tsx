@@ -11,8 +11,8 @@ export function HeroSection() {
   const [experience, setExperience] = useState("")
 
   const handleGenerate = () => {
-    // Direct to sign up page - placeholder for now
-    console.log("Generating course:", { topic, duration, experience })
+    // Direct to auth page
+    window.location.href = "/auth"
   }
 
   return (
@@ -25,38 +25,43 @@ export function HeroSection() {
           </div>
         </div>
         
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          Turn Curiosity Into{" "}
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tight mb-6">
+          It's Like Duolingo.{" "}
+          <br />
           <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Mastery
+            But For Anything.
           </span>
         </h1>
         
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Describe what you want to learn, and Pinted creates a personalized course in seconds.
+          You describe what you want to learn and Pinted creates a personalized course in seconds.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button variant="hero" className="group">
-            Start Learning
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          <Button variant="hero" className="group" asChild>
+            <a href="/auth">
+              Start Learning
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </Button>
-          <Button variant="outline" className="text-base px-8 py-3 rounded-lg">
-            See How It Works
+          <Button variant="outline" className="text-base px-8 py-3 rounded-lg" asChild>
+            <a href="#how-it-works">
+              See How It Works
+            </a>
           </Button>
         </div>
 
         {/* Course Setup Widget */}
-        <div className="max-w-2xl mx-auto bg-card border rounded-2xl p-8 card-shadow">
-          <h3 className="text-xl font-semibold mb-6">Create Your Course</h3>
-          <div className="space-y-6">
+        <div className="max-w-3xl mx-auto bg-card border rounded-2xl p-10 card-shadow">
+          <h3 className="text-2xl font-semibold mb-8">Create Your Course</h3>
+          <div className="space-y-8">
             <div className="text-left">
-              <label className="block text-sm font-medium mb-2">What do you want to learn?</label>
+              <label className="block text-base font-medium mb-3">What do you want to learn?</label>
               <Textarea 
-                placeholder="e.g., guitar basics, front-end web development, spanish..."
+                placeholder="e.g. guitar basics, front-end web development, Spanish..."
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="min-h-[120px] text-base"
+                className="min-h-[160px] text-lg resize-none"
               />
             </div>
             
@@ -95,17 +100,13 @@ export function HeroSection() {
             
             <Button 
               onClick={handleGenerate}
-              className="w-full text-base py-3"
+              className="w-full text-lg py-4"
               variant="hero"
             >
-              <Rocket className="h-5 w-5 mr-2" />
+              <Rocket className="h-6 w-6 mr-2" />
               Generate My Course
             </Button>
           </div>
-        </div>
-        
-        <div className="mt-12 text-sm text-muted-foreground">
-          ✨ No setup required • 🎯 Personalized to you • 🚀 Start learning immediately
         </div>
       </div>
     </section>

@@ -6,21 +6,18 @@ const steps = [
     icon: MessageSquare,
     title: "Describe your goal",
     description: "Enter what you want to learn in simple words.",
-    example: "\"Spanish for travel in 2 weeks\"",
     image: "step1-placeholder.gif"
   },
   {
     icon: Bot,
     title: "AI builds your course",
     description: "Lessons, quizzes, flashcards, and activities generated instantly.",
-    example: "Structured curriculum with interactive content",
     image: "step2-placeholder.gif"
   },
   {
     icon: Play,
     title: "Start learning interactively",
     description: "Take quizzes, practice with TTS and speech, track your progress.",
-    example: "Personalized learning experience",
     image: "step3-placeholder.gif"
   }
 ]
@@ -65,12 +62,9 @@ export function HowItWorks() {
                       <span className="text-sm font-medium text-primary">Step {index + 1}</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <p className="text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
-                    <div className="bg-accent/50 rounded-lg p-3 text-sm text-muted-foreground italic">
-                      {step.example}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -79,7 +73,10 @@ export function HowItWorks() {
           
           {/* Image - Right Side */}
           <div className="relative">
-            <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center text-muted-foreground text-lg font-medium transition-smooth">
+            <div 
+              className="bg-muted rounded-2xl flex items-center justify-center text-muted-foreground text-lg font-medium transition-smooth"
+              style={{ height: `${steps.length * 120}px` }}
+            >
               {steps[activeStep].image}
             </div>
           </div>

@@ -58,7 +58,7 @@ export function Testimonials() {
 
     const scroll = () => {
       if (!isHovered && scrollContainer) {
-        scrollContainer.scrollLeft += 0.5
+        scrollContainer.scrollLeft += 1
         
         // Reset to start when reaching the end for seamless loop
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
@@ -96,7 +96,7 @@ export function Testimonials() {
         >
           <div 
             ref={scrollRef}
-            className="flex gap-6 pb-4 overflow-x-auto scrollbar-hide" 
+            className="flex gap-6 pb-4 overflow-x-auto scrollbar-hide transition-transform duration-300 ease-out" 
             style={{ width: 'fit-content', scrollBehavior: 'auto' }}
           >
             {/* Duplicate testimonials for seamless loop */}

@@ -6,12 +6,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-lg">
             <Sparkles className="h-4 w-4 text-primary-foreground" />
           </div>
           <span className="text-xl font-bold">Pinted</span>
-        </div>
+        </a>
         
         <nav className="hidden md:flex items-center gap-6">
           <a href="#features" className="text-muted-foreground hover:text-foreground transition-smooth">
@@ -30,11 +30,11 @@ export function Header() {
         
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="ghost" className="hidden sm:inline-flex">
-            Login
+          <Button variant="ghost" className="hidden sm:inline-flex" asChild>
+            <a href="/auth">Login</a>
           </Button>
-          <Button variant="cta">
-            Sign Up
+          <Button variant="cta" asChild>
+            <a href="/auth">Sign Up</a>
           </Button>
         </div>
       </div>

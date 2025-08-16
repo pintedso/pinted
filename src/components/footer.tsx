@@ -13,15 +13,14 @@ export function Footer() {
               <span className="text-xl font-bold">Pinted</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Turn Curiosity Into Mastery
+              It's like Duolingo. But For Anything.
             </p>
           </div>
           
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="mailto:pintedso@gmail.com" className="hover:text-foreground transition-smooth">pintedso@gmail.com</a></li>
-              <li><a href="/feedback" className="hover:text-foreground transition-smooth">Feedback</a></li>
+              <li><a href="mailto:pintedso@gmail.com" className="hover:text-foreground transition-smooth">Contact</a></li>
             </ul>
           </div>
           
@@ -37,7 +36,7 @@ export function Footer() {
         
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 Pinted. All rights reserved.
+            © 2025 Pinted. All Rights Reserved.
           </p>
         </div>
       </div>

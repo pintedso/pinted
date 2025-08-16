@@ -46,11 +46,8 @@ export function FeaturesGrid() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Everything you need to learn effectively
+            Everything You Need
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Powerful features designed to make learning interactive, personalized, and fun.
-          </p>
         </div>
         
         <div className="space-y-6">
@@ -63,19 +60,22 @@ export function FeaturesGrid() {
                 top: `${80 + index * 20}px`
               }}
             >
-              <div className="flex flex-col lg:flex-row items-start gap-8">
-                <div className="flex items-center gap-6 lg:w-2/5">
-                  <div className="p-6 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-smooth">
-                    <feature.icon className="h-12 w-12 text-primary" />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-4 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-smooth flex-shrink-0">
+                      <feature.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold">{feature.title}</h3>
                 </div>
-                <div className="lg:w-3/5">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                    {feature.description}
-                  </p>
-                  {/* Placeholder for future GIFs */}
-                  <div className="h-64 bg-muted/50 rounded-xl flex items-center justify-center text-muted-foreground">
+                <div className="w-full">
+                  <div className="h-80 bg-muted/50 rounded-xl flex items-center justify-center text-muted-foreground">
                     GIF placeholder - {feature.title}
                   </div>
                 </div>
