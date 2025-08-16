@@ -20,7 +20,7 @@ export function Header() {
           <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-smooth">
             How it Works
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-smooth">
+          <a href="/pricing" className="text-muted-foreground hover:text-foreground transition-smooth">
             Pricing
           </a>
           <a href="#faq" className="text-muted-foreground hover:text-foreground transition-smooth">

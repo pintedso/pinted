@@ -1,5 +1,6 @@
 import { Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { useEffect, useRef, useState } from "react"
 
 const testimonials = [
   {
@@ -47,6 +48,35 @@ const testimonials = [
 ]
 
 export function Testimonials() {
+  const [isHovered, setIsHovered] = useState(false)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number>()
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current
+    if (!scrollContainer) return
+
+    const scroll = () => {
+      if (!isHovered && scrollContainer) {
+        scrollContainer.scrollLeft += 1
+        
+        // Reset to start when reaching the end
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+          scrollContainer.scrollLeft = 0
+        }
+      }
+      animationRef.current = requestAnimationFrame(scroll)
+    }
+
+    animationRef.current = requestAnimationFrame(scroll)
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [isHovered])
+
   return (
     <section className="py-24 px-4">
       <div className="max-w-6xl mx-auto">
@@ -59,9 +89,18 @@ export function Testimonials() {
           </p>
         </div>
         
-        <div className="overflow-x-auto">
-          <div className="flex gap-6 pb-4" style={{ width: 'fit-content' }}>
-            {testimonials.map((testimonial, index) => (
+        <div 
+          className="overflow-x-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div 
+            ref={scrollRef}
+            className="flex gap-6 pb-4 overflow-x-auto scrollbar-hide" 
+            style={{ width: 'fit-content', scrollBehavior: 'auto' }}
+          >
+            {/* Duplicate testimonials for seamless loop */}
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
               <Card key={index} className="w-80 flex-shrink-0 card-shadow hover:card-shadow-hover transition-smooth">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-1 mb-4">

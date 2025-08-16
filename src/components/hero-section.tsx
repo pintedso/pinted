@@ -1,7 +1,20 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { ArrowRight, Sparkles, Rocket } from "lucide-react"
+import { useState } from "react"
 
 export function HeroSection() {
+  const [topic, setTopic] = useState("")
+  const [duration, setDuration] = useState("")
+  const [experience, setExperience] = useState("")
+
+  const handleGenerate = () => {
+    // Direct to sign up page - placeholder for now
+    console.log("Generating course:", { topic, duration, experience })
+  }
+
   return (
     <section className="hero-gradient py-24 px-4">
       <div className="max-w-4xl mx-auto text-center">
@@ -13,18 +26,17 @@ export function HeroSection() {
         </div>
         
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          Learn anything.{" "}
+          Turn Curiosity Into{" "}
           <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Instantly.
+            Mastery
           </span>
         </h1>
         
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Describe what you want to learn, and Pinted creates a personalized course for you in seconds.
-          Interactive quizzes, progress tracking, and AI-powered lessons tailored just for you.
+          Describe what you want to learn, and Pinted creates a personalized course in seconds.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button variant="hero" className="group">
             Start Learning
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -32,6 +44,64 @@ export function HeroSection() {
           <Button variant="outline" className="text-base px-8 py-3 rounded-lg">
             See How It Works
           </Button>
+        </div>
+
+        {/* Course Setup Widget */}
+        <div className="max-w-2xl mx-auto bg-card border rounded-2xl p-8 card-shadow">
+          <h3 className="text-xl font-semibold mb-6">Create Your Course</h3>
+          <div className="space-y-6">
+            <div className="text-left">
+              <label className="block text-sm font-medium mb-2">What do you want to learn?</label>
+              <Textarea 
+                placeholder="e.g., Python for web development, Spanish for travel, Guitar basics..."
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+                className="min-h-[60px]"
+              />
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="text-left">
+                <label className="block text-sm font-medium mb-2">Course Duration</label>
+                <Select value={duration} onValueChange={setDuration}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select duration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="1-week">1 Week</SelectItem>
+                    <SelectItem value="2-weeks">2 Weeks</SelectItem>
+                    <SelectItem value="1-month">1 Month</SelectItem>
+                    <SelectItem value="3-months">3 Months</SelectItem>
+                    <SelectItem value="6-months">6 Months</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <div className="text-left">
+                <label className="block text-sm font-medium mb-2">Your Experience</label>
+                <Select value={experience} onValueChange={setExperience}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select level" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="beginner">Complete Beginner</SelectItem>
+                    <SelectItem value="some-knowledge">Some Knowledge</SelectItem>
+                    <SelectItem value="intermediate">Intermediate</SelectItem>
+                    <SelectItem value="advanced">Advanced</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+            
+            <Button 
+              onClick={handleGenerate}
+              className="w-full text-base py-3"
+              variant="hero"
+            >
+              <Rocket className="h-5 w-5 mr-2" />
+              Generate My Course
+            </Button>
+          </div>
         </div>
         
         <div className="mt-12 text-sm text-muted-foreground">

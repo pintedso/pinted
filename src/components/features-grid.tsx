@@ -60,8 +60,8 @@ const features = [
 
 export function FeaturesGrid() {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-24 px-4 relative">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Everything you need to learn effectively
@@ -71,21 +71,24 @@ export function FeaturesGrid() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group p-6 bg-card rounded-lg border card-shadow hover:card-shadow-hover transition-smooth hover:-translate-y-1"
+              className="group sticky top-24 bg-card border rounded-2xl p-8 card-shadow hover:card-shadow-hover transition-smooth hover:-translate-y-2"
+              style={{ zIndex: features.length - index }}
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-accent rounded-lg group-hover:bg-primary/10 transition-smooth">
-                  <feature.icon className="h-5 w-5 group-hover:text-primary transition-smooth" />
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div className="flex items-center gap-4 md:w-1/3">
+                  <div className="p-4 bg-accent rounded-xl group-hover:bg-primary/10 transition-smooth">
+                    <feature.icon className="h-8 w-8 group-hover:text-primary transition-smooth" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{feature.title}</h3>
                 </div>
-                <h3 className="font-semibold">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed md:w-2/3">
+                  {feature.description}
+                </p>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
