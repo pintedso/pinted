@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-muted/30 border-t py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-lg">
@@ -13,26 +13,14 @@ export function Footer() {
               <span className="text-xl font-bold">Pinted</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              AI-powered learning platform that creates personalized courses from your descriptions.
+              Turn Curiosity Into Mastery
             </p>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-foreground transition-smooth">Features</a></li>
-              <li><a href="#pricing" className="hover:text-foreground transition-smooth">Pricing</a></li>
-              <li><a href="#how-it-works" className="hover:text-foreground transition-smooth">How it Works</a></li>
-              <li><a href="/app" className="hover:text-foreground transition-smooth">Try Now</a></li>
-            </ul>
           </div>
           
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#faq" className="hover:text-foreground transition-smooth">FAQ</a></li>
-              <li><a href="/contact" className="hover:text-foreground transition-smooth">Contact</a></li>
-              <li><a href="/help" className="hover:text-foreground transition-smooth">Help Center</a></li>
+              <li><a href="mailto:pintedso@gmail.com" className="hover:text-foreground transition-smooth">pintedso@gmail.com</a></li>
               <li><a href="/feedback" className="hover:text-foreground transition-smooth">Feedback</a></li>
             </ul>
           </div>
@@ -49,11 +37,8 @@ export function Footer() {
         
         <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Pinted. All rights reserved.
+            © 2025 Pinted. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>Made with ❤️ for learners</span>
-          </div>
         </div>
       </div>
     </footer>

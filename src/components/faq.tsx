@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
 
 const faqs = [
   {
@@ -65,6 +66,12 @@ export function FAQ() {
             </AccordionItem>
           ))}
         </Accordion>
+        
+        <div className="text-center mt-12">
+          <Button variant="hero" size="lg">
+            Try Pinted Now
+          </Button>
+        </div>
       </div>
     </section>
   )

@@ -53,10 +53,10 @@ export function HeroSection() {
             <div className="text-left">
               <label className="block text-sm font-medium mb-2">What do you want to learn?</label>
               <Textarea 
-                placeholder="e.g., Python for web development, Spanish for travel, Guitar basics..."
+                placeholder="e.g., guitar basics, front-end web development, spanish..."
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="min-h-[60px]"
+                className="min-h-[120px] text-base"
               />
             </div>
             

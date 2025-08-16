@@ -58,10 +58,10 @@ export function Testimonials() {
 
     const scroll = () => {
       if (!isHovered && scrollContainer) {
-        scrollContainer.scrollLeft += 1
+        scrollContainer.scrollLeft += 0.5
         
-        // Reset to start when reaching the end
-        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+        // Reset to start when reaching the end for seamless loop
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0
         }
       }

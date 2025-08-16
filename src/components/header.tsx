@@ -30,8 +30,11 @@ export function Header() {
         
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <Button variant="ghost" className="hidden sm:inline-flex">
+            Login
+          </Button>
           <Button variant="cta">
-            Try Pinted Now
+            Sign Up
           </Button>
         </div>
       </div>
