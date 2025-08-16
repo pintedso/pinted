@@ -26,15 +26,12 @@ export function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0)
 
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section className="py-24 px-4 bg-gradient-to-br from-muted/30 to-muted/60">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             How Pinted Works
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Three simple steps to start your personalized learning journey
-          </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

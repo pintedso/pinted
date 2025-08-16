@@ -5,6 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { SignUpDialog } from "@/components/sign-up-dialog"
+import { useState } from "react"
 
 const faqs = [
   {
@@ -38,8 +40,10 @@ const faqs = [
 ]
 
 export function FAQ() {
+  const [showSignUpDialog, setShowSignUpDialog] = useState(false)
+  
   return (
-    <section className="py-24 px-4 bg-muted/30">
+    <section className="py-24 px-4 bg-gradient-to-br from-muted/30 to-muted/60">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -68,11 +72,13 @@ export function FAQ() {
         </Accordion>
         
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => setShowSignUpDialog(true)}>
             Try Pinted Now
           </Button>
         </div>
       </div>
+      
+      <SignUpDialog open={showSignUpDialog} onOpenChange={setShowSignUpDialog} />
     </section>
   )
 }

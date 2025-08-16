@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { SignUpDialog } from "@/components/sign-up-dialog"
 import { Sparkles } from "lucide-react"
+import { useState } from "react"
 
 export function Header() {
+  const [showSignUpDialog, setShowSignUpDialog] = useState(false)
+  
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -33,11 +37,13 @@ export function Header() {
           <Button variant="ghost" className="hidden sm:inline-flex" asChild>
             <a href="/auth">Login</a>
           </Button>
-          <Button variant="cta" asChild>
-            <a href="/auth">Sign Up</a>
+          <Button variant="cta" onClick={() => setShowSignUpDialog(true)}>
+            Sign Up
           </Button>
         </div>
       </div>
+      
+      <SignUpDialog open={showSignUpDialog} onOpenChange={setShowSignUpDialog} />
     </header>
   )
 }

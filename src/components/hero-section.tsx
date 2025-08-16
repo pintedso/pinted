@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { SignUpDialog } from "@/components/sign-up-dialog"
 import { ArrowRight, Sparkles, Rocket } from "lucide-react"
 import { useState } from "react"
 
@@ -9,10 +10,10 @@ export function HeroSection() {
   const [topic, setTopic] = useState("")
   const [duration, setDuration] = useState("")
   const [experience, setExperience] = useState("")
+  const [showSignUpDialog, setShowSignUpDialog] = useState(false)
 
   const handleGenerate = () => {
-    // Direct to auth page
-    window.location.href = "/auth"
+    setShowSignUpDialog(true)
   }
 
   return (
@@ -38,11 +39,9 @@ export function HeroSection() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button variant="hero" className="group" asChild>
-            <a href="/auth">
-              Start Learning
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+          <Button variant="hero" className="group" onClick={() => setShowSignUpDialog(true)}>
+            Start Learning
+            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button variant="outline" className="text-base px-8 py-3 rounded-lg" asChild>
             <a href="#how-it-works">
@@ -109,6 +108,8 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+      
+      <SignUpDialog open={showSignUpDialog} onOpenChange={setShowSignUpDialog} />
     </section>
   )
 }

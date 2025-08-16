@@ -7,31 +7,19 @@ const plans = [
     name: "Free",
     price: "$0",
     period: "/month",
-    description: "Best for trying it out, casual learners",
-    features: [
-      "Generate 2 courses total",
-      "Basic interactive quizzes (MCQ, blanks, flashcards)",
-      "Progress tracking (per course)",
-      "Light/Dark mode toggle"
-    ],
+    description: "Best for trying it out, casual learners. Generate 2 courses total • Basic interactive quizzes (MCQ, blanks, flashcards) • Progress tracking (per course) • Light/Dark mode toggle",
+    features: [],
     cta: "Start Free",
     popular: false
   },
   {
-    name: "Pro",
-    price: "$12",
+    name: "Super",
+    price: "$19.99",
     period: "/month",
-    description: "Best for regular learners, professionals",
-    yearlyPrice: "$99/year",
-    features: [
-      "Unlimited course generation",
-      "All quiz types (MCQ, blanks, flashcards, True/False)",
-      "Progress tracking + analytics",
-      "Text-to-speech for lessons",
-      "Priority AI responses (faster)",
-      "Early access to new features"
-    ],
-    cta: "Start Pro Trial",
+    description: "Best for regular learners, professionals. Unlimited course generation • All quiz types (MCQ, blanks, flashcards, True/False) • Progress tracking + analytics • Text-to-speech for lessons • Priority AI responses (faster) • Early access to new features",
+    yearlyPrice: "$199/year",
+    features: [],
+    cta: "Try Super Today",
     popular: true
   }
 ]
@@ -48,7 +36,7 @@ const featureComparison = [
 
 export function Pricing() {
   return (
-    <section className="py-24 px-4" id="pricing">
+    <section className="py-24 px-4 bg-gradient-to-br from-muted/30 to-muted/60" id="pricing">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -75,9 +63,8 @@ export function Pricing() {
                 </div>
               )}
               
-              <CardHeader className="text-center pb-8">
+              <CardHeader className="text-center pb-6">
                 <h3 className="text-2xl font-bold">{plan.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
                 <div className="space-y-2">
                   <div className="flex items-end justify-center gap-1">
                     <span className="text-4xl font-bold">{plan.price}</span>
@@ -92,14 +79,7 @@ export function Pricing() {
               </CardHeader>
               
               <CardContent className="space-y-6">
-                <ul className="space-y-3">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="h-4 w-4 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
                 
                 <Button 
                   className="w-full" 
@@ -112,33 +92,8 @@ export function Pricing() {
           ))}
         </div>
         
-        {/* Feature Comparison */}
-        <div className="bg-card rounded-lg border card-shadow p-6">
-          <h3 className="text-xl font-semibold text-center mb-6">Feature Comparison</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b">
-                  <th className="text-left py-3 font-medium">Feature</th>
-                  <th className="text-center py-3 font-medium">Free Plan</th>
-                  <th className="text-center py-3 font-medium">Pro Plan</th>
-                </tr>
-              </thead>
-              <tbody>
-                {featureComparison.map((item, index) => (
-                  <tr key={index} className="border-b last:border-b-0">
-                    <td className="py-3 font-medium">{item.feature}</td>
-                    <td className="py-3 text-center text-muted-foreground text-sm">{item.free}</td>
-                    <td className="py-3 text-center text-sm">{item.pro}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        
         <div className="text-center mt-12">
-          <p className="text-lg font-medium mb-2">Start free today. Upgrade to Pro anytime.</p>
+          <p className="text-lg font-medium mb-2">Start free today. Upgrade to Super anytime.</p>
           <p className="text-muted-foreground">No setup fees • Cancel anytime • 30-day money-back guarantee</p>
         </div>
       </div>

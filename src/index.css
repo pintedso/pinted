@@ -54,6 +54,7 @@
 
     /* Custom Pinted tokens */
     --hero-gradient: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --section-gradient: linear-gradient(135deg, hsl(0 0% 97%), hsl(0 0% 95%));
     --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --card-shadow-hover: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,6 +94,7 @@
     --ring: 0 0% 83%;
 
     --hero-gradient: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
+    --section-gradient: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 8%));
     --card-shadow: 0 1px 3px 0 rgb(255 255 255 / 0.1), 0 1px 2px -1px rgb(255 255 255 / 0.1);
     --card-shadow-hover: 0 4px 6px -1px rgb(255 255 255 / 0.1), 0 2px 4px -2px rgb(255 255 255 / 0.1);
   }
